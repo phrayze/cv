@@ -522,12 +522,12 @@ h1 {
 h2 {
     font-size: 24px;
     border-bottom: 1px solid #ccc;
-    color: #f39
+    color: #4285F4
 }
 
 h3 {
     font-size: 18px;
-    color: #333
+    color: #424242
     -webkit-margin-before: 0.01em;
     -webkit-margin-after: 0.01em;
 }
@@ -1003,7 +1003,7 @@ sub {
 }
 
 .highlight .gu {
-    color: #800080;
+    color: #0000FF;
     font-weight: bold
 }
 

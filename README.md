@@ -1,66 +1,85 @@
-# Markdown Resume
+# Markdown CV
 
-This repo allows you to build/maintain your resume in a Markdown file, and then publish it into an HTML or PDF file.
-Technically, you could output it into any file you wanted with pandoc, or wkhtmltopdf, but I wasn't interested in those scenarios so I explore those avenues.
+This repo contains my CV in Markdown files, which can be published to HTML, PDF and DOC formats.
+Requirements to execute are
+* pandoc
+* wkhtmltopdf
 
-The inspiration for this project came from my need to look for a job, my need to update my resume, and my desire not to have to write something in Google docs, or Microsoft Word, so I scoured the web for newer way to build/maintain a resume, while doing so I ran into this [project by Sonya Sawtelle](https://sdsawtelle.github.io/blog/output/simple-markdown-resume-with-pandoc-and-wkhtmltopdf.html).
+Pandoc: allows you to convert any file to html or doc
+wkhtmltopdf: takes a html output and prints it to pdf
 
-I modified the CSS for my taste, and noticed that some of the documentation needed to be updated.
-
-Since Sonya's post is nearly five years old, there have been many changes to the command line utilities that she used, so I've updated this README to reflect those changes.
+The inspiration for this project came from having to manually edit a CV in a marked up document editor (eg Google Docs or Microsoft Word). I simply wanted to write my CV in an easily readable and highly extensible format (i.e. Markdown), and then parse it through a CSS style sheet to build a beautiful, marked up document.
 
 # Workflow
 
 The workflow is pretty simple.
 
-1. Edit the resume.md file.
-1. Run pandoc to convert the Markdown file to HTML. OR
-1. Run pandoc to convert the Markdown file into a PDF.
+1. Edit the .md Markdown files in the directory. Each file refers to a different section and are numbered for order.
+2. Edit the includes.txt to determine the order in which your files will be parsed
+3. Run pandoc to convert the Markdown file to HTML. OR DOC
+4. Run pandoc to convert the Markdown file into a PDF.
 
-The big difference between Sonya's workflow is that if you want, you can convert from MD -> PDF in one step, rather than two. You can still go from MD -> HTML -> PDF, but if you don't want to have an HTML file, you don't have to.
+# Instructions
 
-I also don't feel like supporting/using Microsoft Word, so I'm not even trying to output to .docx.
-
-# Updated instructions for a Mac .. or 2021
-
-A lot has changed since Sonya wrote her blog post and shared her workflow, so here are some updates on how to get started and building/updating your own resume.
-
-# Pre-Requisites
-
-## [Pandoc](https://pandoc.org) a universal document converter
-
-```bash
+## Pre-Requisites
+Assuming you have the appropriate package installers for your operating system
+* MacOS: brew
+* Windows: chocalatey
+  
+### [Pandoc](https://pandoc.org) a universal document converter
+#### MacOS
+```
     brew install pandoc
 ```
+#### Windows
+```
+    choco install pandoc
+```
 
-## [Wkhtmltopdf](https://wkhtmltopdf.org)
-
+### [Wkhtmltopdf](https://wkhtmltopdf.org) convert html to pdf
+#### MacOS
 ```
     brew install wkhtmltopdf
 ```
-
-## Markdown to HTML
-
+#### Windows
 ```
-pandoc resume.md -f markdown -t html -c resume-stylesheet.css -s -o resume.html
+    choco install wkhtmltopdf
 ```
 
+## Export MD files into includes.txt
+#### MacOS
+```
+```
+#### Windows
+```
+dir -name *.md -exclude README.md > includes.txt
+```
+
+## Generating Output Files
+
+### Markdown to HTML
+
+```
+pandoc -s $(cat includes.txt) -f markdown -t html -c cv-stylesheet.css -o cv.html
+```
+### Markdown to DOC
+
+```
+pandoc -s $(cat includes.txt) -f markdown -t doc -c cv-stylesheet.css -o cv.doc
+```
 ## Markdown to PDF
 
 ```
-pandoc resume.md -f markdown -t pdf --pdf-engine=wkhtmltopdf -c resume-stylesheet.css -s -o resume.pdf
+pandoc -s $(cat includes.txt) -f markdown -t pdf --pdf-engine=wkhtmltopdf -c cv-stylesheet.css -o cv.pdf
 ```
+## Automating CV Generation
+A github workflow create-cv.yml is provided which will 
+* install pandoc
+* install wkhtmltopdf
+* convert cv in markdown format to HTML, DOC and PDF formats
+* create a zip file called <github.username>-cv.zip
+* the file is available to download directly from your workflow run (if completes successfully)
 
-## HTML to PDF
 
-If you want to convert from HTML to PDF for some reason, you'll need to add a switch to wkhtmltopdf so that it works properly.
-
-```
-wkhtmltopdf --enable-local-file-access resume.html resume.pdf
-```
-
-# TODO
-
-- [x] [github action](https://github.com/pandoc/pandoc-action-example) will run and create the HTML and PDF file automatically.
-- [ ] the Author field in the PDF, it seems to not work when the pdf-engine is set to wkhtmltopdf
-- [ ] make a release or a package?
+### TODO
+- Update the workflow to generate a github page with the CV, and publish the doc / pdf to a web location for easy download
