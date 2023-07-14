@@ -27,11 +27,11 @@ jobs:
 
       - name: "Convert MD to HTML"
         run: |
-          pandoc -s cat includes.txt | cv.md -f markdown -t html -c cv-stylesheet.css -o output/${{github.actor}}-cv.html
+          pandoc -s $(cat includes.txt) -f markdown -t html -c cv-stylesheet.css -o output/${{github.actor}}-cv.html
 
       - name: "Convert MD to DOC"
         run: |
-          pandoc -s cat includes.txt | cv.md -f markdown -t docx -c cv-stylesheet.css -o output/${{github.actor}}-cv.doc
+          pandoc -s $(cat includes.txt) -f markdown -t docx -c cv-stylesheet.css -o output/${{github.actor}}-cv.doc
 
       - name: "Convert HTML to PDF "
         run: "wkhtmltopdf --enable-local-file-access output/${{github.actor}}-cv.html output/${{github.actor}}-cv.pdf"
