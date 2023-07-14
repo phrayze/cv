@@ -65,7 +65,7 @@ pandoc -s $(cat includes.txt) -f markdown -t html -c cv-stylesheet.css -o cv.htm
 ### Markdown to DOC
 
 ```
-pandoc -s $(cat includes.txt) -f markdown -t doc -c cv-stylesheet.css -o cv.doc
+pandoc -s $(cat includes.txt) -f markdown -t docx -c cv-stylesheet.css -o cv.doc
 ```
 ## Markdown to PDF
 
