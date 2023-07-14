@@ -27,17 +27,18 @@ jobs:
 
       - name: "Convert MD to HTML"
         run: |
-          pandoc -s $(cat includes.txt) -f markdown -t html -c resume-stylesheet.css -o output/${{github.actor}}-cv.html
+          pandoc -s cat includes.txt -f markdown -t html -c cv-stylesheet.css -o output/${{github.actor}}-cv.html
 
       - name: "Convert MD to DOC"
         run: |
-          pandoc -s $(cat includes.txt) -f markdown -t doc -c resume-stylesheet.css -o output/${{github.actor}}-cv.doc
+          pandoc -s cat includes.txt -f markdown -t doc -c cv-stylesheet.css -o output/${{github.actor}}-cv.doc
 
       - name: "Convert HTML to PDF "
         run: "wkhtmltopdf --enable-local-file-access output/${{github.actor}}-cv.html output/${{github.actor}}-cv.pdf"
       # run: |
-      #     /usr/bin/pandoc -standalone --output=output/resume.pdf --css=resume-stylesheet.css --from=markdown --to=pdf --pdf-engine=/usr/bin/wkhtmltopdf resume.md
+      #     /usr/bin/pandoc -standalone cat includes.txt --output=output/cv.pdf --css=cv-stylesheet.css --from=markdown --to=pdf --pdf-engine=/usr/bin/wkhtmltopdf
+
       - uses: actions/upload-artifact@master
-        with: # basically this will put resume.html, resume.doc and resume.pdf in a zip file.
+        with: # basically this will put cv.html, cv.doc and cv.pdf in a zip file.
           name: ${{ github.actor }}-cv
           path: output
