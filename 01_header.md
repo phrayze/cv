@@ -16,4 +16,6 @@ subject: 'CV'
 
 ###### [example.com](https://example.com)
 ###### [alanzt@gmail.com](mailto:alanzt+work@gmail.com)
+###### [LinkedIn](linkedin.com/in/azt)
 ###### +44(0) 7927 233 411
+###### **Citizenship**: Australian & British

@@ -1,32 +1,37 @@
 
 ## Experience
 
-### CEO and Founder, Pied Piper
+### Staff Technical Solutions Consultant, Google
 
-start-date-end-date, City, State and remote
+March 2020 - Current, London, UK
 
 - Things you did/do here
 - More things that you do here.
 
-**Technologies used:** Tell people about the languages, apps, technologies you used to succeed at this job.
+**Technologies used:** Google Cloud Platform, Terraform IaC, 
 
-### Senior Software Architect, Hooli
+### Cloud Architect, Hewlett Packard Enterprise (HPE)
 
-2010-2016, San Francisco, CA
+August 2018 - March 2020, London, UK
 
-- This is the job you had before your latest job
-- Did you do anything that wasn't part of your job description, but you excelled at?
+- Deliver complex enterprise digital transformations and migrations for large FSI clients.
 
-**Technologies used:** Tell people about the languages, apps, technologies you used to succeed at this job.
+**Technologies used:** Microsoft Azure, ARM IaC and Powershell Scripting
 
-## Awards & Recognition
+### Product Owner, AToS
 
-- Winner TechCrunch Disrupt 2001
-- People Magazine's sexiest man alive at 123 My Address, MyCity, TX
+February 2015 - August 2018, London, UK
 
-## Projects
+- Lead a technical product development for a hybrid public cloud offering
+- Run multiple teams, geographically dispersed to contribute to evolving features for go to market.
 
-**[*Personal Blog*](http://luther.io)** (2021-present)
+**Technologies used:** ServiceNow, AWS and Azure Infrastructure as Code. 
 
-- Authored a series of articles covering a wide variety of topics and tools related to technology like PHP, WordPress, Ruby, Linux, Docker, and Privacy.
+### Technical Solutions, Freshfields Bruckhaus Deringer
 
+October 2012 - January 2015, London, UK
+
+- Large enterprise project to upgrade major operating systems and core applcations within the firm. 
+- Worked cross-functionally across multiple consultancies, vendors and stakeholders to deliver end to end migrations, with governance around an AGILE approach.
+
+**Technologies used:** Citrix XenApp, XenDesktop, VMWare vSphere, Microsoft Wintel / Office.

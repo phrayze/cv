@@ -1,8 +1,11 @@
 
 ## Awards & Recognition
 
-- Winner TechCrunch Disrupt 2001
-- People Magazine's sexiest man alive at 123 My Address, MyCity, TX
+- Google Professional Cloud Architect
+- Microsoft Certified Solutions Engineer - Cloud Platform
+- Citrix CCA
+- VMWare Certified Professional
+- Professional Scrum Master (PSM1) - scrum.org
 
 ## Projects
 

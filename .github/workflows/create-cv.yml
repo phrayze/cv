@@ -15,13 +15,14 @@ jobs:
       - name: "Create a folder called output"
         run: |
           mkdir output
+          cp cv-stylesheet.css output/cv-stylesheet.css
+
       # Downloading the binaries directly (current as of 14/07/2023) because they are newer and work better, than the ones that come with Ubuntu latest.
       - name: "Install pandoc and wkhtmltopdf"
         run: |
           wget https://github.com/jgm/pandoc/releases/download/3.1.5/pandoc-3.1.5-1-amd64.deb         
           wget https://github.com/wkhtmltopdf/packaging/releases/download/0.12.6.1-3/wkhtmltox_0.12.6.1-3.jammy_amd64.deb
-          
-
+        
           sudo apt install ./pandoc-3.1.5-1-amd64.deb
           sudo apt install ./wkhtmltox_0.12.6.1-3.jammy_amd64.deb
 
@@ -30,11 +31,11 @@ jobs:
           pandoc -s $(cat includes.txt) -f markdown -t html -c cv-stylesheet.css -o output/${{github.actor}}-cv.html
 
       - name: "Convert MD to DOC"
-        run: |
+        run: |        
           pandoc -s $(cat includes.txt) -f markdown -t docx -c cv-stylesheet.css -o output/${{github.actor}}-cv.doc
 
       - name: "Convert HTML to PDF "
-        run: "wkhtmltopdf --enable-local-file-access output/${{github.actor}}-cv.html output/${{github.actor}}-cv.pdf"
+        run: "wkhtmltopdf --enable-local-file-access output/${{github.actor}}-cv.html output/${{github.actor}}-cv.pdf" 
       # run: |
       #     /usr/bin/pandoc -standalone cat includes.txt --output=output/cv.pdf --css=cv-stylesheet.css --from=markdown --to=pdf --pdf-engine=/usr/bin/wkhtmltopdf
 
