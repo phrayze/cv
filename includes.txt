@@ -1,6 +1,6 @@
-files\01_header.md
-files\02_intro.md
-files\03_skills.md
-files\04_experience.md
-files\05_extracirricular.md
-files\06_personal.md
+files/01_header.md
+files/02_intro.md
+files/03_skills.md
+files/04_experience.md
+files/05_extracirricular.md
+files/06_personal.md
