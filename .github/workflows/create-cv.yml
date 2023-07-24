@@ -40,6 +40,7 @@ jobs:
       - name: "Convert MD to HTML"
         run: |
           pandoc -s $(cat includes.txt) -f markdown -t html -c cv-stylesheet.css -o output/${{github.actor}}-cv.html
+          cp output/${{github.actor}}-cv.html output/index.html
 
       - name: "Convert MD to DOC"
         run: |        
@@ -58,7 +59,7 @@ jobs:
       - name: Build with Jekyll
         uses: actions/jekyll-build-pages@v1
         with:
-          source: ./output
+          source: ./output/index.html
           destination: ./_site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v2
