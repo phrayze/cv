@@ -1,15 +1,8 @@
 
-## Awards & Recognition
+## Certifications
 
 - Google Professional Cloud Architect
-- Microsoft Certified Solutions Engineer - Cloud Platform
-- Citrix CCA
-- VMWare Certified Professional
-- Professional Scrum Master (PSM1) - scrum.org
-
-## Projects
-
-**[*Personal Blog*](http://luther.io)** (2021-present)
-
-- Authored a series of articles covering a wide variety of topics and tools related to technology like PHP, WordPress, Ruby, Linux, Docker, and Privacy.
-
+- Microsoft Certified Solutions Engineer - Cloud Platform (MCSE)
+- Citrix Certified Associate - Virtualization (CCA-V)
+- VMWare Certified Professional - Data Center Virtualization (VPC)
+- Professional Scrum Master - scrum.org (PSM1)
